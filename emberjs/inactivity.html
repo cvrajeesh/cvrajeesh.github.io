@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Detecting user inactivity time in EmberJS applications</title>
+	<link rel="stylesheet" href="inactivity.css">
+</head>
+<body>
+	
+
+<script type="text/x-handlebars">
+	<div class="main">
+		<h1>EmberJS User Inactivity Demo</h1>
+		<div>
+			<p>Move the mouse or enter something on the input boxes, or click on the button to be active</p>
+
+			<input type="text" />
+			<button>Click Me</button>
+		</div>		
+		<div class="inactivitytime"> Last active since: {{lastActiveTimeFromNow}}</div>
+	<div>
+</script>
+
+<script src="scripts/jquery-2.1.1.min.js"></script>
+<script src="scripts/moment.2.6.0.min.js"></script>
+<script src="scripts/handlebars-v1.3.0.js"></script>
+<script src="scripts/ember.prod-1.5.1.js"></script>
+<script src="inactivity.js"></script>
+</body>
+</html>
