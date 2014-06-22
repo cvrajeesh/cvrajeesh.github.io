@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EmberJS error handling</title>
+	<link rel="stylesheet" href="errorhandling.css">
+</head>
+<body>
+
+<script type="text/x-handlebars">
+	<div class="main">
+		<h1>EmberJS Error Handling Demo</h1>
+		<div>
+		<p>Mouse the mouse over here to generate errors. To see the errors, open console by pressing F12.</p>
+		<p>To enable throttling check the below checkbox</p>
+		</div>		
+		<div>
+			{{view Ember.Checkbox checked=isThrottlingEnabled}} Enable throttling
+		</div>
+	<div>
+</script>
+	
+<script src="scripts/jquery-2.1.1.min.js"></script>
+<script src="scripts/handlebars-v1.3.0.js"></script>
+<script src="scripts/ember.prod-1.5.1.js"></script>
+<script src="errorhandling.js"></script>
+</body>
+</html>
