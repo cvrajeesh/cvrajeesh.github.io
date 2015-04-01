@@ -1,5 +1,5 @@
 ﻿#messageList {
-	width: 390px;
+    width: 100%;
 	height: calc(100% - 38px);
 	border: 1px solid silver;
 	margin-top: 4px;
@@ -7,7 +7,6 @@
 
 #messageList.wide {
 	min-width: 390px;
-	width: calc(100% - 5px);
 }
 
 .win-pivot-item .win-pivot-item-content {
