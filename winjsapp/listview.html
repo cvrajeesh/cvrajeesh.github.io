@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>WinJS List View</title>
+    <link href="css/ui-dark.css" rel="stylesheet" />
+    <link href="css/listview.css" rel="stylesheet" />
+    <script src="js/WinJS.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="http://10.10.50.31:9091/target/target-script-min.js#anonymous"></script>
+</head>
+<body>
+    
+    <div class="smallListIconTextTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="smallListIconTextItem">
+            <img src="#" class="smallListIconTextItem-Image" data-win-bind="src: picture" />
+            <div class="smallListIconTextItem-Detail">
+                <h4 data-win-bind="textContent: title"></h4>
+                <h6 data-win-bind="textContent: text"></h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="listView win-selectionstylefilled"
+         data-win-control="WinJS.UI.ListView"
+         data-win-options="{
+                          itemDataSource: Sample.listViewdata.dataSource,
+                          itemTemplate: select('.smallListIconTextTemplate'),
+                          selectionMode: 'none',
+                          tapBehavior: 'none',
+                          layout: { type: WinJS.UI.ListLayout }
+                  }">
+    </div>
+
+</body>
+</html>

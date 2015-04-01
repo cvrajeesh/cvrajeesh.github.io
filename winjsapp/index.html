@@ -21,16 +21,69 @@
             </div>
         </div>
     </div>
+    
+    <div class="smallListIconTextTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="smallListIconTextItem">
+            <img src="#" class="smallListIconTextItem-Image" data-win-bind="src: picture" />
+            <div class="smallListIconTextItem-Detail">
+                <h4 data-win-bind="textContent: title"></h4>
+                <h6 data-win-bind="textContent: text"></h6>
+            </div>
+        </div>
+    </div>
 
     <!--<button id="toggleSizeButton">Toggle Pivot Width</button>-->
 
     <div id="messageList" class="wide" data-win-control="WinJS.UI.Pivot" data-win-options="{ selectedIndex: 2 }">
-        <div class="pivotItem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'inbox' }">
-            <div data-win-control="WinJS.UI.Repeater" data-win-options="{ data: Sample.Inbox, template: select('.messageTemplate') }"></div>
+        <div class="pivotItem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'Hub' }">
+            <!--<div data-win-control="WinJS.UI.Repeater" data-win-options="{ data: Sample.Inbox, template: select('.messageTemplate') }"></div>-->
+            <div data-win-control="WinJS.UI.Hub">
+                <div class="section1" data-win-control="WinJS.UI.HubSection" data-win-options="{header: 'Images', isHeaderStatic: true}">
+                    <div class="imagesFlexBox">
+                        <img class="imageItem" src="http://lorempixel.com/200/200/nature/1" />
+                        <img class="imageItem" src="http://lorempixel.com/200/200/nature/2" />
+                        <img class="imageItem" src="http://lorempixel.com/200/200/nature/3" />
+                        <img class="imageItem" src="http://lorempixel.com/200/200/nature/4" />
+                        <img class="imageItem" src="http://lorempixel.com/200/200/nature/5" />
+                        <img class="imageItem" src="http://lorempixel.com/200/200/nature/6" />
+                        <img class="imageItem" src="http://lorempixel.com/200/200/nature/7" />
+                        <img class="imageItem" src="http://lorempixel.com/200/200/nature/8" />
+                        <img class="imageItem" src="http://lorempixel.com/200/200/nature/9" />
+                    </div>
+                </div>
+                
+                <div class="section2" data-win-control="WinJS.UI.HubSection" data-win-options="{header: 'Repeater', isHeaderStatic: true}">
+                    <div data-win-control="WinJS.UI.Repeater" data-win-options="{ data: Sample.repeaterData, template: select('.smallListIconTextTemplate') }"></div>
+                </div>
+                
+                <div class="section3" data-win-control="WinJS.UI.HubSection" data-win-options="{header: 'ListView', isHeaderStatic: true}">
+                    
+                    <div class="listView win-selectionstylefilled"
+                         data-win-control="WinJS.UI.ListView"
+                         data-win-options="{
+                          itemDataSource: Sample.listViewdata.dataSource,
+                          itemTemplate: select('.smallListIconTextTemplate'),
+                          selectionMode: 'none',
+                          tapBehavior: 'none',
+                          layout: { type: WinJS.UI.ListLayout }
+                        }">
+                    </div>
+
+                </div>
+            </div>
         </div>
 
-        <div class="pivotItem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'unread' }">
-            <div data-win-control="WinJS.UI.Repeater" data-win-options="{ data: Sample.Unread, template: select('.messageTemplate') }"></div>
+        <div class="pivotItem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'ListView' }">
+            <div class="listView win-selectionstylefilled"
+               data-win-control="WinJS.UI.ListView"
+               data-win-options="{
+                          itemDataSource: Sample.listViewdata.dataSource,
+                          itemTemplate: select('.smallListIconTextTemplate'),
+                          selectionMode: 'none',
+                          tapBehavior: 'none',
+                          layout: { type: WinJS.UI.ListLayout }
+                  }">
+            </div>
         </div>
 
         <div class="pivotItem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'flagged' }">

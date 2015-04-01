@@ -52,13 +52,36 @@
         { name: "Bryce Benefield", icon: "http://lorempixel.com/48/48/people/3", time: "5:56a", readStateColor: "rgba(255, 255, 255, 1)", readStateWeight: "600", messageText: "See you at practice!" }
     ]);
 
+    var itemArray = [
+        { title: "Marvelous Mint", text: "Gelato", picture: "http://lorempixel.com/60/60/food/1" },
+        { title: "Succulent Strawberry", text: "Sorbet", picture: "http://lorempixel.com/60/60/food/2" },
+        { title: "Banana Blast", text: "Low-fat frozen yogurt", picture: "http://lorempixel.com/60/60/food/3" },
+        { title: "Lavish Lemon Ice", text: "Sorbet", picture: "http://lorempixel.com/60/60/food/4" },
+        { title: "Creamy Orange", text: "Sorbet", picture: "http://lorempixel.com/60/60/food/5" },
+        { title: "Very Vanilla", text: "Ice Cream", picture: "http://lorempixel.com/60/60/food/6" },
+        { title: "Banana Blast", text: "Low-fat frozen yogurt", picture: "http://lorempixel.com/60/60/food/7" },
+        { title: "Lavish Lemon Ice", text: "Sorbet", picture: "http://lorempixel.com/60/60/food/8" }
+    ];
+
+    var items = [];
+
+    // Generate 160 items
+    for (var i = 0; i < 20; i++) {
+        itemArray.forEach(function (item) {
+            items.push(item);
+        });
+    }
+
+
     WinJS.Namespace.define("Sample", {
         Inbox: inbox,
         Unread: unread,
         Flagged: flagged,
         Important: important,
         Deleted: deleted,
-        Blocked: blocked
+        Blocked: blocked,
+        repeaterData: new WinJS.Binding.List(itemArray),
+        listViewdata: new WinJS.Binding.List(items)
     });
 })();
 
