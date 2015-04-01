@@ -70,3 +70,4 @@ WinJS.UI.processAll().then(function () {
     //    messageList.winControl.forceLayout();
     //});
 });
+
