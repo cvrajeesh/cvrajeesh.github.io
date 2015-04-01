@@ -108,6 +108,8 @@
     overflow: hidden;
     display: -ms-flexbox;
     display: -webkit-flex;
+    display: -webkit-box; /* Support for Android 4.1 browsers*/
+    display: -webkit-flex;
     display: flex;
 }
 
