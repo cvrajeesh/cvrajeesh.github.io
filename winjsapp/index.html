@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>WinJS test app</title>
+    <link href="css/ui-dark.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/WinJS.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="messageTemplate" data-win-control="WinJS.Binding.Template">
+        <div class="message">
+            <div class="userIcon"><img src="#" data-win-bind="src: icon" /></div>
+            <div class="messageContent">
+                <div class="contactInformation">
+                    <div class="contactName" data-win-bind="textContent: name"></div>
+                    <div class="contactTime" data-win-bind="textContent: time; style.color: readStateColor; style.fontWeight: readStateWeight"></div>
+                </div>
+                <div class="messagePreview" data-win-bind="textContent: messageText; style.color: readStateColor; style.fontWeight: readStateWeight"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--<button id="toggleSizeButton">Toggle Pivot Width</button>-->
+
+    <div id="messageList" class="wide" data-win-control="WinJS.UI.Pivot" data-win-options="{ selectedIndex: 2 }">
+        <div class="pivotItem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'inbox' }">
+            <div data-win-control="WinJS.UI.Repeater" data-win-options="{ data: Sample.Inbox, template: select('.messageTemplate') }"></div>
+        </div>
+
+        <div class="pivotItem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'unread' }">
+            <div data-win-control="WinJS.UI.Repeater" data-win-options="{ data: Sample.Unread, template: select('.messageTemplate') }"></div>
+        </div>
+
+        <div class="pivotItem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'flagged' }">
+            <div data-win-control="WinJS.UI.Repeater" data-win-options="{ data: Sample.Flagged, template: select('.messageTemplate') }"></div>
+        </div>
+
+        <div class="pivotItem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'important' }">
+            <div data-win-control="WinJS.UI.Repeater" data-win-options="{ data: Sample.Important, template: select('.messageTemplate') }"></div>
+        </div>
+
+        <div class="pivotItem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'deleted' }">
+            <div data-win-control="WinJS.UI.Repeater" data-win-options="{ data: Sample.Deleted, template: select('.messageTemplate') }"></div>
+        </div>
+
+        <div class="pivotItem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'blocked' }">
+            <div data-win-control="WinJS.UI.Repeater" data-win-options="{ data: Sample.Blocked, template: select('.messageTemplate') }"></div>
+        </div>
+    </div>
+</body>
+</html>
